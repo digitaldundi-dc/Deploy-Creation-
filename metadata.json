@@ -1,0 +1,8 @@
+{
+  "name": "Deploy Creation",
+  "description": "A high-end SaaS application for professional social media strategy, campaign planning, and asset optimization powered by Gemini AI.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
