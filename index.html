@@ -1,153 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deploy Creation | Enterprise AI Command</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --brand-primary: #6366F1;
-        --brand-accent: #8B5CF6;
-        --transition-speed: 0.4s;
-        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Marketing Workflow Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="font-family: Arial; padding: 40px;">
+  <h1>AI-Based Marketing Workflow Demo</h1>
 
-      /* High-Contrast Light Theme (MNC Standards) */
-      :root[data-theme='light'] {
-        --brand-bg: #F8FAFC; 
-        --card-bg: #FFFFFF;
-        --sidebar-bg: #0F172A; 
-        --text-heading: #0F172A;
-        --text-body: #334155;
-        --border-color: #E2E8F0;
-        --header-bg: rgba(248, 250, 252, 0.9);
-        --glass-border: rgba(99, 102, 241, 0.1);
-        --accent-glow: rgba(99, 102, 241, 0.05);
-        --shadow-color: rgba(15, 23, 42, 0.08);
-      }
+  <p>
+    This project demonstrates how AI tools can be used to support
+    digital marketing workflows such as content planning,
+    ideation, and execution.
+  </p>
 
-      /* Luminous Enterprise Dark */
-      :root[data-theme='dark'] {
-        --brand-bg: #020617;
-        --card-bg: #0F172A;
-        --sidebar-bg: #020617;
-        --text-heading: #F8FAFC;
-        --text-body: #94A3B8;
-        --border-color: #1E293B;
-        --header-bg: rgba(2, 6, 23, 0.9);
-        --glass-border: rgba(255, 255, 255, 0.1);
-        --accent-glow: rgba(99, 102, 241, 0.15);
-        --shadow-color: rgba(0, 0, 0, 0.4);
-      }
+  <p>
+    <strong>Live AI Demo:</strong><br />
+    <a href="https://ai.studio/apps/drive/13dKw67K020TNoS6RFBOF8QLk88E9AdxE?fullscreenApplet=true"
+       target="_blank">
+      Open AI Studio Application
+    </a>
+  </p>
 
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: var(--brand-bg);
-        color: var(--text-body);
-        transition: background-color var(--transition-speed) var(--ease-out-expo), color var(--transition-speed) var(--ease-out-expo);
-        -webkit-font-smoothing: antialiased;
-        letter-spacing: -0.01em;
-        min-height: 100vh;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        color: var(--text-heading);
-        letter-spacing: -0.02em; 
-        font-weight: 800;
-        line-height: 1.2;
-      }
-
-      .pro-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        box-shadow: 0 4px 20px var(--shadow-color);
-        transition: all var(--transition-speed) var(--ease-out-expo);
-      }
-
-      .premium-input {
-        background: var(--brand-bg) !important;
-        border: 1px solid var(--border-color) !important;
-        border-radius: 12px !important;
-        padding: 0.75rem 1rem;
-        font-size: 0.875rem;
-        color: var(--text-heading) !important;
-        width: 100%;
-        transition: all 0.2s ease !important;
-      }
-
-      .premium-input:focus {
-        background: var(--card-bg) !important;
-        border-color: var(--brand-primary) !important;
-        box-shadow: 0 0 0 4px var(--accent-glow) !important;
-        outline: none;
-      }
-
-      .text-shimmer {
-        background: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .glass-sidebar {
-        background: var(--sidebar-bg);
-        border-right: 1px solid var(--border-color);
-      }
-
-      .data-label {
-        font-size: 0.7rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--brand-primary);
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      .active-nav {
-        background-color: var(--brand-primary) !important;
-        color: white !important;
-        box-shadow: 0 8px 20px -5px rgba(99, 102, 241, 0.4);
-      }
-
-      .active-nav svg {
-        color: white !important;
-      }
-
-      .no-scrollbar::-webkit-scrollbar { width: 4px; }
-      .no-scrollbar::-webkit-scrollbar-thumb { 
-        background: var(--border-color); 
-        border-radius: 10px; 
-      }
-
-      .text-hero {
-        font-size: clamp(2.5rem, 8vw, 4.5rem);
-        line-height: 1.1;
-        letter-spacing: -0.04em;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "recharts": "https://esm.sh/recharts@^2.12.7"
-      }
-    }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <p>
+    Built as a practical showcase for digital marketing and AI-assisted workflows.
+  </p>
+</body>
 </html>
